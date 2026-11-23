@@ -1,0 +1,74 @@
+{
+  "version": 1,
+  "author": "Girls Hostel Security Demo",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "board-esp32-devkit-c-v4",
+      "id": "esp",
+      "top": 0,
+      "left": 0,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn1",
+      "top": 100,
+      "left": 200,
+      "attrs": {
+        "color": "green",
+        "label": "Simulated gate event"
+      }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": 0,
+      "left": 220,
+      "attrs": {
+        "color": "red"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 80,
+      "left": 300,
+      "attrs": {
+        "value": "220"
+      }
+    }
+  ],
+  "connections": [
+    [
+      "esp:4",
+      "btn1:1.l",
+      "green",
+      []
+    ],
+    [
+      "btn1:2.l",
+      "esp:GND.1",
+      "black",
+      []
+    ],
+    [
+      "esp:2",
+      "led1:A",
+      "red",
+      []
+    ],
+    [
+      "led1:C",
+      "r1:1",
+      "black",
+      []
+    ],
+    [
+      "r1:2",
+      "esp:GND.1",
+      "black",
+      []
+    ]
+  ]
+}
